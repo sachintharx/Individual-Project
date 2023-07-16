@@ -1,0 +1,80 @@
+﻿<Window x:Class="LMS_SYT.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LMS_SYT"
+        mc:Ignorable="d"
+        Title="{Binding Title,UpdateSourceTrigger=PropertyChanged}" Height="550" Width="800">
+    <Window.DataContext>
+        <local:AddUserVM/>
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Width="800" Height="450" HorizontalAlignment="Center"
+            VerticalAlignment="Top" Orientation="Vertical">
+            <TextBlock Margin="5" TextAlignment="Center" Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Width="200"  FontWeight="ExtraBold" 
+                   FontSize="20" FontFamily="Josefin">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#aa076b" Offset="0"/>
+                        <GradientStop Color="#aa076b" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+
+            </TextBlock>
+
+            <TextBlock Text="First Name:" Width="150" FontFamily="BR Firma" TextAlignment="Left"   
+            FontSize="12" Foreground="DarkCyan" FontWeight="SemiBold" Margin="20,5,5,5" HorizontalAlignment="Left"/>
+
+            <TextBox Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Margin="20,0,0,0" Width="300" Grid.Column="1" 
+                     BorderThickness=" 0 0 0 1" Background="Transparent"
+                       FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Last Name:" Grid.Row="1" Width="150" FontFamily="BR Firma" TextAlignment="Left"   
+            FontSize="12" Foreground="DarkCyan" FontWeight="SemiBold" Margin="20,5,5,5" HorizontalAlignment="Left" />
+            <TextBox Text="{Binding Lastname, UpdateSourceTrigger=PropertyChanged}" Margin="20,0,0,0" Width="300" Grid.Column="1" 
+                     BorderThickness=" 0 0 0 1" Background="Transparent"
+                       FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>
+            <TextBlock Text="Age:" Grid.Row="1" Width="150" FontFamily="BR Firma" TextAlignment="Left"   
+            FontSize="12" Foreground="DarkCyan" FontWeight="SemiBold" Margin="20,5,5,5" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding Age, UpdateSourceTrigger = PropertyChanged}" Margin="20,0,0,0" Grid.Row="1" Width="100" Grid.Column="1" 
+                     BorderThickness=" 0 0 0 1" Background="Transparent"
+                       FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>
+            <TextBlock Text="Date Of Birth:" Grid.Row="1" Width="150" FontFamily="BR Firma" TextAlignment="Left"   
+            FontSize="12" Foreground="DarkCyan" FontWeight="SemiBold" Margin="20,5,5,5" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding Dateofbirth, UpdateSourceTrigger=PropertyChanged}" Margin="20,0,0,0" Grid.Row="1" Width="200" Grid.Column="1" 
+                     BorderThickness=" 0 0 0 1" Background="Transparent"
+                       FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>
+            <!--<DatePicker SelectedDate="{Binding DateOfBirth, UpdateSourceTrigger=PropertyChanged}" Margin="20,0,0,0" Grid.Row="1" Width="200" Grid.Column="1" 
+            BorderThickness="0 0 0 1" Background="Transparent"
+            FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>-->
+
+
+            <TextBlock Text="GPA" Grid.Row="1" Width="150" FontFamily="BR Firma" TextAlignment="Left"   
+            FontSize="12" Foreground="DarkCyan" FontWeight="SemiBold" Margin="20,5,5,5" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding Gpa, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}" Margin="20,0,0,0" Grid.Row="1" Width="50" Grid.Column="1" 
+                     BorderThickness=" 0 0 0 1" Background="Transparent"
+                       FontFamily="Josefin Sans" FontSize="15" FontStyle="Italic" HorizontalAlignment="Left"/>
+            <Button Content="Insert Picture" Width="100" HorizontalAlignment="Left" Command="{Binding UploadPhotoCommand}" Margin="20,50,5,-30" Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+            <Image Height="108" HorizontalAlignment="Left" Width="125" Margin="150 1 0 0" Source="{Binding SelectedImage,UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Content="Save" Command="{Binding SaveCommand}"  Grid.Row="3" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Style="{StaticResource mainbutten}" />
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>

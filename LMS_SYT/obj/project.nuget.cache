@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9CHmTG/P0WLWunifgQTry6rcjRxBcT0VhZk6E2kLrOfK6titLp/slrc7paY/JBIfv4vU6pWt5VSXWvhR/HIwJQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Asus\\Downloads\\Student_Management_System\\LMS_SYT\\Student_Management_System.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.0-preview1\\communitytoolkit.mvvm.8.2.0-preview1.nupkg.sha512"
+  ],
+  "logs": []
+}
